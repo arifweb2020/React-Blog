@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home';
 import About from './Pages/About';
 import SinglePost from './Pages/SinglePost';
+import CreatePost from './Pages/CreatePost';
 
 
 
@@ -17,8 +18,8 @@ function App() {
 	   <Route  path="/about" component={About}/>
 		<Route  path="/blog-post/:id" component={SinglePost}/>
      
-        {/*  <Route  path="/create-post" component={CreatePost}/>
-<Route  path="/update-post/:id" component={EditPost}/>*/}
+    <Route  path="/create-post" component={CreatePost}/>
+    {/*  <Route  path="/update-post/:id" component={EditPost}/>*/}
       </Switch>
     </div>
     </Router>

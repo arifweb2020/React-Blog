@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 export const allPost = ()=>{
 
@@ -32,3 +33,22 @@ export const singlePost = (id)=>{
     }
 
 }
+
+
+export const createPost = (post)=>{
+
+    return async (dispatch)=>{
+
+        const res = await axios.post('https://jsonplaceholder.typicode.com/posts',
+        post);
+
+         
+
+         dispatch({
+             type:"CR_POST",
+             payload:res.data
+         })
+    }
+
+} 
+

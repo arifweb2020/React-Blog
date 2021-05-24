@@ -22,6 +22,13 @@ const BlogPost = (state=myData, action)=>{
                 post:action.payload
             }
 
+            case "CR_POST" :
+
+            return{
+                ...state,
+                AllPosts:[action.payload , ...state.AllPosts]
+            }
+
             default :
 
             return state
