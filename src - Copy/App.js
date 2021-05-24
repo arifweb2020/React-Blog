@@ -3,8 +3,9 @@ import Nav from './components/Nav';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Pages/Home';
 import About from './Pages/About';
+import CreatePost from './Pages/CreatePost';
 import SinglePost from './Pages/SinglePost';
-
+import EditPost from './Pages/EditPost';
 
 
 function App() {
@@ -14,11 +15,10 @@ function App() {
       <Nav/>
       <Switch>
       <Route exact path="/" component={Home}/>
-	   <Route  path="/about" component={About}/>
-		<Route  path="/blog-post/:id" component={SinglePost}/>
-     
-        {/*  <Route  path="/create-post" component={CreatePost}/>
-<Route  path="/update-post/:id" component={EditPost}/>*/}
+      <Route  path="/blog-post/:id" component={SinglePost}/>
+      <Route  path="/about" component={About}/>
+      <Route  path="/create-post" component={CreatePost}/>
+      <Route  path="/update-post/:id" component={EditPost}/>
       </Switch>
     </div>
     </Router>
