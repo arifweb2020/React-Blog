@@ -52,3 +52,19 @@ export const createPost = (post)=>{
 
 } 
 
+
+export const delPost = (id)=>{
+
+    return async (dispatch)=>{
+        await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
+        dispatch({
+            type:"DEL_POST",
+            payload:id
+        })
+
+
+    }
+
+       
+}

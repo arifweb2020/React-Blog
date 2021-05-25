@@ -1,40 +1,48 @@
 const myData = {
 
-    AllPosts :[],
-    post:"",
+    AllPosts: [],
+    post: "",
 }
 
-const BlogPost = (state=myData, action)=>{
+const BlogPost = (state = myData, action) => {
 
-        switch (action.type){
+    switch (action.type) {
 
-            case "ALL_POST" :
-
-            return {
-                ...state,
-                AllPosts:action.payload
-            }
-
-            case "SINGLE_POST" :
+        case "ALL_POST":
 
             return {
                 ...state,
-                post:action.payload
+                AllPosts: action.payload
             }
 
-            case "CR_POST" :
+        case "SINGLE_POST":
 
-            return{
+            return {
                 ...state,
-                AllPosts:[action.payload , ...state.AllPosts]
+                post: action.payload
             }
 
-            default :
+        case "CR_POST":
+
+            return {
+                ...state,
+                AllPosts: [action.payload, ...state.AllPosts]
+            }
+
+        case "DEL_POST":
+
+            return {
+
+                ...state,
+                AllPosts: state.AllPosts.filter((item) => item.id !== action.payload)
+            }
+
+        default:
 
             return state
 
 
-        }
+    }
 
 }
 
